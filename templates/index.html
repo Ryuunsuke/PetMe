@@ -20,6 +20,7 @@
 
 
   <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
   <title>PetMe</title>
 </head>
@@ -868,7 +869,7 @@
       <button class="chat-button" onclick="openChat()">Open chat</button>
 
         <div id="id01" class="loginmodal">
-          <form class="loginmodal-content animate" action="/action_page.php" method="post">
+          <form class="loginmodal-content animate" id="logmodal">
             <div class="imgcontainer">
               <span onclick="closemodals()" class="close" title="Close Modal">&times;</span>
               <img src="/static/Images/logo.png" alt="Avatar" class="avatar">
@@ -877,10 +878,10 @@
         
             <div class="container">
               <label for="uname"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="LEmail" required>
+              <input type="text" id="LEmail" placeholder="Enter Email" name="LEmail" required>
         
               <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="LPSW" required>
+              <input type="password" id="LPSW" placeholder="Enter Password" name="LPSW" required>
                 
               <span class="register">Don't have an account? <a onclick="showRegister()">Register</a></span>
             </div>
@@ -894,7 +895,7 @@
         </div>
 
         <div id="id02" class="registermodal">
-          <form class="registermodal-content animate" action="/action_page.php" method="post">
+          <form class="registermodal-content animate" id="regmodal">
             <div class="imgcontainer">
               <span onclick="closemodals()" class="close" title="Close Modal">&times;</span>
               <img src="/static/Images/logo.png" alt="Avatar" class="avatar">
@@ -902,10 +903,10 @@
         
             <div class="container">
               <label for="registeremail"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="REmail" required>
+              <input type="text" id="REmail" placeholder="Enter Email" name="REmail" required>
         
               <label for="registerpsw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="RPSW" required>
+              <input type="password" id="RPSW" placeholder="Enter Password" name="RPSW" required>
                 
               <span class="register">Already have an account? <a onclick="showLogin()">Login</a></span>
             </div>
@@ -921,6 +922,7 @@
       <!-- Chat box -->
         <div id="chatbox" class="chat-container">
           <div class="chat-content animate">
+            <span class="logout"><a onclick="logout()">Log out</a></span>
             <span onclick="closemodals()" class="close" title="Close Modal">&times;</span>
             <div class="message-wrapper">
             <div class="messages" id="messages"></div>
@@ -1009,45 +1011,17 @@
   </script>
   <script>
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target.classList.contains('loginmodal')) {
-        document.getElementById('id01').style.display = "none";
-      }
-      if (event.target.classList.contains('registermodal')) {
-        document.getElementById('id02').style.display = "none";
-      }
-      if (event.target.classList.contains('chat-container')) {
-        document.getElementById('chatbox').style.display = "none";
-      }
-    }
-    function closemodals(){
-      document.getElementById('id01').style.display='none';
-      document.getElementById('id02').style.display='none';
-      document.getElementById('chatbox').style.display='none';
-    }
-    function openChat(){
-      // if(login=true){
-        document.getElementById('chatbox').style.display='flex';
-      // }else{
-      //   document.getElementById('id01').style.display='block';
-      // }
-    }
-
-    function showRegister() {
-      document.getElementById('id01').style.display = 'none'; // Hide login modal
-      document.getElementById('id02').style.display = 'block'; // Show register modal
-    }
-
-    function showLogin() {
-      document.getElementById('id02').style.display = 'none'; // Hide register modal
-      document.getElementById('id01').style.display = 'block'; // Show login modal
-    }
+    
+    
 
   </script>
   
   <script src="/static/JS/index.js"></script>
   <script src="/static/JS/navbar.js"></script>
   <script src="/static/JS/light-dark-theme.js"></script>
+  <script src="static/JS/register.js"></script>
+  <script src="static/JS/login.js"></script>
+  <script src="static/JS/utils.js"></script>
 </body>
 
 </html>
