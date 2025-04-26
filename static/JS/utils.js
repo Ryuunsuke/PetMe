@@ -27,11 +27,10 @@ function showLogin() {
 }
 
 function openChat() {
-    // Create a JSON object with the form data
+
     let email = $('#LEmail').val();
     let password = $('#LPSW').val();
 
-    // Create a JSON object with the form data
     let data = {
         email: email,
         password: password
@@ -51,8 +50,10 @@ function openChat() {
                     document.getElementById('id01').style.display = 'none';
                     document.getElementById('id02').style.display = 'none';
                     document.getElementById('chatbox').style.display='flex';
+                    fetchConversationHistory();
                 } else {
                     alert("You need to log in to use this feature.");
+                    document.getElementById('logmodal').reset();
                     document.getElementById('id01').style.display='block';
                     document.getElementById('id02').style.display = 'none';
                     document.getElementById('chatbox').style.display='none';

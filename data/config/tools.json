@@ -1,0 +1,52 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "adopt",
+            "description": "adopt a pet by inserting te required informations into the database and tell the user that it is waiting for approval from a coordinator.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                "pet_name": {"type": "string"}
+                },
+                "required": ["pet_name"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "donate_pet",
+            "description": "insert a pet into the database",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                "pet_name": {"type": "string"},
+                "type": {"type": "string"},
+                "gender": {"type": "string"},
+                "color": {"type": "string"},
+                "age": {"type": "string"},
+                "breed": {"type": "string"},
+                "location": {"type": "string"}
+                },
+                "required": ["pet_name", "type", "gender", "color", "age", "breed", "location"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "approve",
+            "description": "approve an adoption",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                "pet_name": {"type": "integer"},
+                "approve": {"type": "string"},
+                "note": {"type": "string"}
+                },
+                "required": ["pet_name", "approve", "note"]
+            }
+        }
+    }
+]

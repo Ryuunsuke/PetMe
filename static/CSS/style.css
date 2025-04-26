@@ -496,14 +496,17 @@ span.logout {
 }
 
 .messages {
-  flex: 1;
-  padding: 200px;
-  overflow-y: scroll;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  margin: 24px 24px 12px 24px;
-  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack messages vertically */
+  align-items: flex-start; /* Align messages to the left */
+  justify-content: flex-start; /* Align messages to the top */
+  padding: 10px 20px; /* Some small padding */
+  overflow-y: auto;
+  height: 400px; /* Set a fixed height */
   background-color: white;
+  color: black;
+  margin: 24px;
+  border: 1px solid #ccc;
 }
 
 .input-container {
@@ -511,6 +514,7 @@ span.logout {
   padding: 10px;
   background-color: #78350F;
   border-top: 1px solid #ddd;
+  color: black;
 }
 .input-container input {
   flex: 1;
@@ -520,6 +524,7 @@ span.logout {
   border-radius: 5px;
   margin-right: 10px;
   margin-left: 10px;
+  color: black;
 }
 .input-container button {
   width: 70px;

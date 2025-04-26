@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('regmodal').reset();
     document.getElementById('regmodal').addEventListener('submit', async function (e) {
         e.preventDefault();  // Prevent the form from submitting the normal way
 
@@ -22,11 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (result.success) {
                 alert('Client registered successfully!');
-
-                // Hide the registration form and show the login form
                 showLogin()
-
-                // Clear the form
                 document.getElementById('regmodal').reset();
             } else {
                 alert(`Error: ${result.message}`);

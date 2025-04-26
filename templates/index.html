@@ -878,10 +878,10 @@
         
             <div class="container">
               <label for="uname"><b>Email</b></label>
-              <input type="text" id="LEmail" placeholder="Enter Email" name="LEmail" required>
+              <input type="text" id="LEmail" placeholder="Enter Email" name="LEmail" autocomplete="off" required>
         
               <label for="psw"><b>Password</b></label>
-              <input type="password" id="LPSW" placeholder="Enter Password" name="LPSW" required>
+              <input type="password" id="LPSW" placeholder="Enter Password" name="LPSW" autocomplete="off" required>
                 
               <span class="register">Don't have an account? <a onclick="showRegister()">Register</a></span>
             </div>
@@ -903,10 +903,10 @@
         
             <div class="container">
               <label for="registeremail"><b>Email</b></label>
-              <input type="text" id="REmail" placeholder="Enter Email" name="REmail" required>
+              <input type="text" id="REmail" placeholder="Enter Email" name="REmail" autocomplete="off" required>
         
               <label for="registerpsw"><b>Password</b></label>
-              <input type="password" id="RPSW" placeholder="Enter Password" name="RPSW" required>
+              <input type="password" id="RPSW" placeholder="Enter Password" name="RPSW" autocomplete="off" required>
                 
               <span class="register">Already have an account? <a onclick="showLogin()">Login</a></span>
             </div>
@@ -925,11 +925,11 @@
             <span class="logout"><a onclick="logout()">Log out</a></span>
             <span onclick="closemodals()" class="close" title="Close Modal">&times;</span>
             <div class="message-wrapper">
-            <div class="messages" id="messages"></div>
+              <div class="messages" id="messages"></div>
             </div>
             <div class="input-container">
                 <button type="button" onclick="closemodals()" class="cancelbtn">Close</button>
-                <input type="text" id="inputField" placeholder="Type a message...">
+                <input type="text" id="inputField" placeholder="Type a message..." style="color: black">
                 <button id="sendButton" onclick="sendMessage()">Send</button>
             </div>
           </div>
@@ -1009,12 +1009,6 @@
     });
 
   </script>
-  <script>
-    // When the user clicks anywhere outside of the modal, close it
-    
-    
-
-  </script>
   
   <script src="/static/JS/index.js"></script>
   <script src="/static/JS/navbar.js"></script>
@@ -1022,6 +1016,8 @@
   <script src="static/JS/register.js"></script>
   <script src="static/JS/login.js"></script>
   <script src="static/JS/utils.js"></script>
+  <script src="static/JS/assistant.js"></script>
+
 </body>
 
 </html>

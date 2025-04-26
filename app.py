@@ -2,14 +2,14 @@ from flask import Flask, render_template, session
 from flask_cors import CORS
 
 from routes.authenticator import authenticator
-# from routes.assistant import assistant
+from routes.vassistant import vassistant
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
 CORS(app)
 
 app.register_blueprint(authenticator)
-# app.register_blueprint(assistant)
+app.register_blueprint(vassistant)
 
 @app.route('/')
 def index():
