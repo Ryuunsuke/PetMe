@@ -7,7 +7,7 @@
             "parameters": {
                 "type": "object",
                 "properties": {
-                "pet_name": {"type": "string"}
+                    "pet_name": {"type": "string"}
                 },
                 "required": ["pet_name"]
             }
@@ -21,13 +21,13 @@
             "parameters": {
                 "type": "object",
                 "properties": {
-                "pet_name": {"type": "string"},
-                "type": {"type": "string"},
-                "gender": {"type": "string"},
-                "color": {"type": "string"},
-                "age": {"type": "string"},
-                "breed": {"type": "string"},
-                "location": {"type": "string"}
+                    "pet_name": {"type": "string"},
+                    "type": {"type": "string"},
+                    "gender": {"type": "string"},
+                    "color": {"type": "string"},
+                    "age": {"type": "string"},
+                    "breed": {"type": "string"},
+                    "location": {"type": "string"}
                 },
                 "required": ["pet_name", "type", "gender", "color", "age", "breed", "location"]
             }
@@ -41,9 +41,77 @@
             "parameters": {
                 "type": "object",
                 "properties": {
-                "pet_name": {"type": "integer"},
-                "approve": {"type": "string"},
-                "note": {"type": "string"}
+                    "pet_name": {"type": "string"},
+                    "approve": {"type": "string"},
+                    "note": {"type": "string"}
+                },
+                "required": ["pet_name", "approve", "note"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "check_user_existing_adopt",
+            "description": "check for any adoption that current user has made, all outputs from this tool are pet names.",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "check_approval",
+            "description": "check for any approval that the current user has made, all outputs from this tool are pet names.",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "check_adoption_status",
+            "description": "check for adoption status for a pet name",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pet_name": {"type": "string"}
+                },
+                "required": ["pet_name"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "status_reason",
+            "description": "returns the reason why the status was modified",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pet_name": {"type": "string"}
+                },
+                "required": ["pet_name"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "modify_status",
+            "description": "modify the status of an adoption from specified pet name",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pet_name": {"type": "string"},
+                    "approve": {"type": "string"},
+                    "note": {"type": "string"}
                 },
                 "required": ["pet_name", "approve", "note"]
             }
