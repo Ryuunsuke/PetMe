@@ -26,9 +26,9 @@ pip install -r requirements.txt
 You must then have to get openai key which you could get here: https://platform.openai.com/api-keys and find config.json in ./data/config folder where you can input the api key, you can leave thread ID and assistant ID to blank as long as you have the api key. 
 
 Compile the code by running 
-''' 
+```
 python3 ./app.py 
-'''
+```
 
 ## Features
 
